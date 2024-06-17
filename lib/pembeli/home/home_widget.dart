@@ -85,6 +85,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                       currentUserDisplayName,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Readex Pro',
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
                             letterSpacing: 0.0,
                           ),
                     ),
@@ -94,28 +96,44 @@ class _HomeWidgetState extends State<HomeWidget> {
             ),
           ),
           actions: [
-            Column(
+            Row(
               mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Align(
-                  alignment: AlignmentDirectional(0.0, 1.0),
-                  child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 20.0, 0.0),
-                    child: FlutterFlowIconButton(
-                      borderColor: FlutterFlowTheme.of(context).primaryText,
-                      borderRadius: 20.0,
-                      borderWidth: 1.0,
-                      buttonSize: 40.0,
-                      icon: Icon(
-                        Icons.wechat_rounded,
-                        color: FlutterFlowTheme.of(context).primaryText,
-                        size: 24.0,
-                      ),
-                      onPressed: () {
-                        print('IconButton pressed ...');
-                      },
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 0.0),
+                  child: FlutterFlowIconButton(
+                    borderColor:
+                        FlutterFlowTheme.of(context).secondaryBackground,
+                    borderRadius: 20.0,
+                    borderWidth: 1.0,
+                    buttonSize: 40.0,
+                    icon: Icon(
+                      Icons.chat,
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      size: 24.0,
                     ),
+                    onPressed: () {
+                      print('IconButton pressed ...');
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 0.0),
+                  child: FlutterFlowIconButton(
+                    borderColor:
+                        FlutterFlowTheme.of(context).secondaryBackground,
+                    borderRadius: 20.0,
+                    borderWidth: 1.0,
+                    buttonSize: 40.0,
+                    icon: Icon(
+                      Icons.add_shopping_cart,
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      size: 24.0,
+                    ),
+                    onPressed: () async {
+                      context.pushNamed('CheckoutPangan');
+                    },
                   ),
                 ),
               ],
@@ -225,6 +243,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                     'Trending',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Readex Pro',
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -235,7 +255,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     width: 395.0,
                     height: 151.0,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).primaryText,
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -355,6 +375,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                       'Kategori',
                       style: FlutterFlowTheme.of(context).titleLarge.override(
                             fontFamily: 'Outfit',
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
                             letterSpacing: 0.0,
                           ),
                     ),
@@ -366,7 +388,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     width: 392.0,
                     height: 176.0,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).primaryText,
                     ),
                     child: ListView(
                       padding: EdgeInsets.fromLTRB(
@@ -551,6 +573,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                     'Rekomendasi',
                     style: FlutterFlowTheme.of(context).titleLarge.override(
                           fontFamily: 'Outfit',
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -606,7 +630,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(10.0),
                                     child: Image.network(
-                                      'https://images.unsplash.com/photo-1613728913341-8f29b02b8253?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxyZWQlMjByaWNlfGVufDB8fHx8MTcxNzEwMjYyMXww&ixlib=rb-4.0.3&q=80&w=1080',
+                                      'https://images.unsplash.com/photo-1613758235256-43a7bdc21d82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw0fHxyaWNlfGVufDB8fHx8MTcxODYxODIyOXww&ixlib=rb-4.0.3&q=80&w=1080',
                                       width: 120.0,
                                       height: 120.0,
                                       fit: BoxFit.cover,
@@ -625,7 +649,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Beras Merah',
+                                        'Beras Putih',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
