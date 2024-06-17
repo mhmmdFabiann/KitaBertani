@@ -218,6 +218,8 @@ class _HomeUserWidgetState extends State<HomeUserWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -229,8 +231,8 @@ class _HomeUserWidgetState extends State<HomeUserWidget> {
                                 width: 395.0,
                                 height: 37.0,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                 ),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -289,8 +291,12 @@ class _HomeUserWidgetState extends State<HomeUserWidget> {
                                 width: 392.0,
                                 height: 280.0,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  border: Border.all(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                  ),
                                 ),
                                 child: StreamBuilder<List<PanganRecord>>(
                                   stream: queryPanganRecord(
@@ -330,7 +336,7 @@ class _HomeUserWidgetState extends State<HomeUserWidget> {
                                           height: 113.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
+                                                .primaryText,
                                           ),
                                           child: Padding(
                                             padding:
@@ -513,7 +519,7 @@ class _HomeUserWidgetState extends State<HomeUserWidget> {
                                     height: 45.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryText,
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -532,16 +538,15 @@ class _HomeUserWidgetState extends State<HomeUserWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                                .primaryText,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
                                                       fontFamily: 'Readex Pro',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
                                                       fontSize: 8.0,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -549,7 +554,7 @@ class _HomeUserWidgetState extends State<HomeUserWidget> {
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryText,
+                                                      .secondaryBackground,
                                               width: 1.0,
                                             ),
                                             borderRadius:
@@ -574,7 +579,7 @@ class _HomeUserWidgetState extends State<HomeUserWidget> {
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
+                                                      .primaryText,
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
@@ -582,7 +587,7 @@ class _HomeUserWidgetState extends State<HomeUserWidget> {
                                                     fontFamily: 'Readex Pro',
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryText,
+                                                        .secondaryBackground,
                                                     fontSize: 8.0,
                                                     letterSpacing: 0.0,
                                                   ),
@@ -590,7 +595,7 @@ class _HomeUserWidgetState extends State<HomeUserWidget> {
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryText,
+                                                        .secondaryBackground,
                                                 width: 1.0,
                                               ),
                                               borderRadius:
