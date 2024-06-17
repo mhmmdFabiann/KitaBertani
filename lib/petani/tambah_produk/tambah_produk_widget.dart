@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -119,6 +120,9 @@ class _TambahProdukWidgetState extends State<TambahProdukWidget> {
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
+                          border: Border.all(
+                            color: FlutterFlowTheme.of(context).primaryText,
+                          ),
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -131,7 +135,7 @@ class _TambahProdukWidgetState extends State<TambahProdukWidget> {
                               onTap: () async {
                                 final selectedMedia = await selectMedia(
                                   mediaSource: MediaSource.photoGallery,
-                                  multiImage: true,
+                                  multiImage: false,
                                 );
                                 if (selectedMedia != null &&
                                     selectedMedia.every((m) =>
@@ -141,6 +145,7 @@ class _TambahProdukWidgetState extends State<TambahProdukWidget> {
                                   var selectedUploadedFiles =
                                       <FFUploadedFile>[];
 
+                                  var downloadUrls = <String>[];
                                   try {
                                     showUploadMessage(
                                       context,
@@ -157,16 +162,30 @@ class _TambahProdukWidgetState extends State<TambahProdukWidget> {
                                               blurHash: m.blurHash,
                                             ))
                                         .toList();
+
+                                    downloadUrls = (await Future.wait(
+                                      selectedMedia.map(
+                                        (m) async => await uploadData(
+                                            m.storagePath, m.bytes),
+                                      ),
+                                    ))
+                                        .where((u) => u != null)
+                                        .map((u) => u!)
+                                        .toList();
                                   } finally {
                                     ScaffoldMessenger.of(context)
                                         .hideCurrentSnackBar();
                                     _model.isDataUploading = false;
                                   }
                                   if (selectedUploadedFiles.length ==
-                                      selectedMedia.length) {
+                                          selectedMedia.length &&
+                                      downloadUrls.length ==
+                                          selectedMedia.length) {
                                     setState(() {
-                                      _model.uploadedLocalFiles =
-                                          selectedUploadedFiles;
+                                      _model.uploadedLocalFile =
+                                          selectedUploadedFiles.first;
+                                      _model.uploadedFileUrl =
+                                          downloadUrls.first;
                                     });
                                     showUploadMessage(context, 'Success!');
                                   } else {
@@ -219,36 +238,25 @@ class _TambahProdukWidgetState extends State<TambahProdukWidget> {
                           ],
                         ),
                       ),
-                      if (_model.uploadedLocalFiles.length >= 1)
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 8.0, 0.0, 0.0),
-                          child: Builder(
-                            builder: (context) {
-                              final imageList = _model.uploadedLocalFiles
-                                  .toList()
-                                  .take(6)
-                                  .toList();
-                              return Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: List.generate(imageList.length,
-                                    (imageListIndex) {
-                                  final imageListItem =
-                                      imageList[imageListIndex];
-                                  return ClipRRect(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.network(
-                                      'https://images.unsplash.com/photo-1621436730344-e7348f1b0507?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyfHxiYXdhbmd8ZW58MHx8fHwxNzE4MzY5OTk5fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                      width: 80.0,
-                                      height: 80.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  );
-                                }).divide(SizedBox(width: 10.0)),
-                              );
-                            },
-                          ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: Image.network(
+                                _model.uploadedFileUrl,
+                                width: 80.0,
+                                height: 80.0,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ].divide(SizedBox(width: 10.0)),
                         ),
+                      ),
                     ],
                   ),
                 ),
@@ -653,7 +661,12 @@ class _TambahProdukWidgetState extends State<TambahProdukWidget> {
                               return FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController ??=
                                     FormFieldController<String>(null),
-                                options: ['Option 1'],
+                                options: dropDownKategoriRecordList
+                                    .map((e) => valueOrDefault<String>(
+                                          e.name,
+                                          'No Kategori',
+                                        ))
+                                    .toList(),
                                 onChanged: (val) =>
                                     setState(() => _model.dropDownValue = val),
                                 width: 180.0,
@@ -800,6 +813,7 @@ class _TambahProdukWidgetState extends State<TambahProdukWidget> {
                                 double.tryParse(_model.textController4.text),
                             kategori: _model.dropDownValue,
                             quantity: int.tryParse(_model.textController5.text),
+                            gambar: _model.uploadedFileUrl,
                           ));
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
