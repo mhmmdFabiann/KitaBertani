@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -19,7 +20,9 @@ class TambahProdukModel extends FlutterFlowModel<TambahProdukWidget> {
 
   final unfocusNode = FocusNode();
   bool isDataUploading = false;
-  List<FFUploadedFile> uploadedLocalFiles = [];
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
 
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
