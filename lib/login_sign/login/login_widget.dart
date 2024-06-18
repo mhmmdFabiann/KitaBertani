@@ -1364,7 +1364,7 @@ class _LoginWidgetState extends State<LoginWidget>
                     width: 100.0,
                     height: double.infinity,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(grey).secondaryBackground,
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: CachedNetworkImageProvider(
