@@ -88,7 +88,7 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
                 height: 23,
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(
-                    widget.options.textStyle?.color ?? Colors.white,
+                    widget.options.textStyle?.color ?? Colors.black,
                   ),
                 ),
               ),
@@ -148,7 +148,7 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
               widget.options.hoverTextColor != null) {
             return widget.options.hoverTextColor;
           }
-          return widget.options.textStyle?.color ?? Colors.white;
+          return widget.options.textStyle?.color ?? Colors.black;
         },
       ),
       backgroundColor: MaterialStateProperty.resolveWith<Color?>(
