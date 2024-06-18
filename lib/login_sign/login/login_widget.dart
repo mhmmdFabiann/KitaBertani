@@ -1314,7 +1314,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               .primary,
                                                       textStyle:
                                                           FlutterFlowTheme.of(
-                                                                  context)
+                                                                  roboto)
                                                               .titleSmall
                                                               .override(
                                                                 fontFamily:
