@@ -1177,7 +1177,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       ),
                                                       filled: true,
                                                       fillColor: FlutterFlowTheme
-                                                              .of(context)
+                                                              .of(white)
                                                           .secondaryBackground,
                                                       contentPadding:
                                                           EdgeInsets.all(24.0),
