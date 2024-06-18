@@ -2,15 +2,19 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'profil_q_a_widget.dart' show ProfilQAWidget;
+import 'chat_dengan_petani_widget.dart' show ChatDenganPetaniWidget;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class ProfilQAModel extends FlutterFlowModel<ProfilQAWidget> {
+class ChatDenganPetaniModel extends FlutterFlowModel<ChatDenganPetaniWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController;
+  String? Function(BuildContext, String?)? textControllerValidator;
 
   @override
   void initState(BuildContext context) {}
@@ -18,5 +22,7 @@ class ProfilQAModel extends FlutterFlowModel<ProfilQAWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
+    textFieldFocusNode?.dispose();
+    textController?.dispose();
   }
 }
