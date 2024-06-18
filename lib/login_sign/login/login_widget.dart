@@ -1319,8 +1319,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Readex Pro',
-                                                                color: Colors
-                                                                    .white,
+                                                                color: const Color.fromARGB(255, 0, 0, 0),
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
