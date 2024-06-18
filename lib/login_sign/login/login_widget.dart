@@ -143,7 +143,7 @@ class _LoginWidgetState extends State<LoginWidget>
                   width: 100.0,
                   height: double.infinity,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).info,
+                    color: FlutterFlowTheme.of(black).info,
                   ),
                   alignment: AlignmentDirectional(0.0, -1.0),
                   child: SingleChildScrollView(
@@ -202,7 +202,7 @@ class _LoginWidgetState extends State<LoginWidget>
                             maxWidth: 602.0,
                           ),
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context).info,
+                            color: FlutterFlowTheme.of(black).info,
                           ),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
@@ -300,7 +300,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                           color: FlutterFlowTheme
-                                                                  .of(context)
+                                                                  .of(white)
                                                               .alternate,
                                                           width: 2.0,
                                                         ),
@@ -312,7 +312,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                           color: FlutterFlowTheme
-                                                                  .of(context)
+                                                                  .of(white)
                                                               .primary,
                                                           width: 2.0,
                                                         ),
@@ -324,7 +324,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                           color: FlutterFlowTheme
-                                                                  .of(context)
+                                                                  .of(white)
                                                               .error,
                                                           width: 2.0,
                                                         ),
@@ -336,7 +336,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                           color: FlutterFlowTheme
-                                                                  .of(context)
+                                                                  .of(white)
                                                               .error,
                                                           width: 2.0,
                                                         ),
@@ -346,7 +346,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       ),
                                                       filled: true,
                                                       fillColor: FlutterFlowTheme
-                                                              .of(context)
+                                                              .of(white)
                                                           .secondaryBackground,
                                                       contentPadding:
                                                           EdgeInsets.all(24.0),
@@ -363,7 +363,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                         .emailAddress,
                                                     cursorColor:
                                                         FlutterFlowTheme.of(
-                                                                context)
+                                                                black)
                                                             .primary,
                                                     validator: _model
                                                         .emailAddressTextControllerValidator
@@ -404,7 +404,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                           color: FlutterFlowTheme
-                                                                  .of(context)
+                                                                  .of(black)
                                                               .alternate,
                                                           width: 2.0,
                                                         ),
@@ -428,7 +428,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                           color: FlutterFlowTheme
-                                                                  .of(context)
+                                                                  .of(black)
                                                               .error,
                                                           width: 2.0,
                                                         ),
@@ -440,7 +440,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                           color: FlutterFlowTheme
-                                                                  .of(context)
+                                                                  .of(red)
                                                               .error,
                                                           width: 2.0,
                                                         ),
@@ -450,7 +450,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       ),
                                                       filled: true,
                                                       fillColor: FlutterFlowTheme
-                                                              .of(context)
+                                                              .of(grey)
                                                           .secondaryBackground,
                                                       contentPadding:
                                                           EdgeInsets.all(24.0),
@@ -471,7 +471,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               : Icons
                                                                   .visibility_off_outlined,
                                                           color: FlutterFlowTheme
-                                                                  .of(context)
+                                                                  .of(black)
                                                               .secondaryText,
                                                           size: 24.0,
                                                         ),
@@ -487,7 +487,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                         ),
                                                     cursorColor:
                                                         FlutterFlowTheme.of(
-                                                                context)
+                                                                black)
                                                             .primary,
                                                     validator: _model
                                                         .passwordTextControllerValidator
