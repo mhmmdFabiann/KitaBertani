@@ -1215,7 +1215,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                     minLines: 1,
                                                     cursorColor:
                                                         FlutterFlowTheme.of(
-                                                                context)
+                                                                black)
                                                             .primary,
                                                     validator: _model
                                                         .passwordConfirmTextControllerValidator
