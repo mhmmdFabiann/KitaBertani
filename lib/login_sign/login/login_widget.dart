@@ -1310,7 +1310,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   0.0),
                                                       color:
                                                           FlutterFlowTheme.of(
-                                                                  context)
+                                                                  white)
                                                               .primary,
                                                       textStyle:
                                                           FlutterFlowTheme.of(
