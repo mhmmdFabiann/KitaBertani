@@ -1131,7 +1131,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                           color: FlutterFlowTheme
-                                                                  .of(context)
+                                                                  .of(black)
                                                               .alternate,
                                                           width: 2.0,
                                                         ),
