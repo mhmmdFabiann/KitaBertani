@@ -9,7 +9,6 @@ import 'schema/users_record.dart';
 import 'schema/pangan_record.dart';
 import 'schema/chat_record.dart';
 import 'schema/kategori_record.dart';
-import 'schema/antrian_verivikasi_record.dart';
 import 'schema/petani_record.dart';
 import 'schema/pembeli_record.dart';
 import 'schema/qa_record.dart';
@@ -25,7 +24,6 @@ export 'schema/users_record.dart';
 export 'schema/pangan_record.dart';
 export 'schema/chat_record.dart';
 export 'schema/kategori_record.dart';
-export 'schema/antrian_verivikasi_record.dart';
 export 'schema/petani_record.dart';
 export 'schema/pembeli_record.dart';
 export 'schema/qa_record.dart';
@@ -173,43 +171,6 @@ Future<List<KategoriRecord>> queryKategoriRecordOnce({
     queryCollectionOnce(
       KategoriRecord.collection,
       KategoriRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-/// Functions to query AntrianVerivikasiRecords (as a Stream and as a Future).
-Future<int> queryAntrianVerivikasiRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      AntrianVerivikasiRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<AntrianVerivikasiRecord>> queryAntrianVerivikasiRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      AntrianVerivikasiRecord.collection,
-      AntrianVerivikasiRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<AntrianVerivikasiRecord>> queryAntrianVerivikasiRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      AntrianVerivikasiRecord.collection,
-      AntrianVerivikasiRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
